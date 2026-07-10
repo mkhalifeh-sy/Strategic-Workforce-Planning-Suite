@@ -17,13 +17,17 @@ class EmployeeAgent:
         self.salary = emp_data['salary']
         self.is_saudi = emp_data['is_saudi']
         self.is_low_wage = emp_data['is_low_wage']
-        self.tenure_months = emp_data.get('tenure_months', 0)
+        # --- FIX: ensure tenure_months is not None ---
+        tenure = emp_data.get('tenure_months', 0)
+        self.tenure_months = tenure if tenure is not None else 0
         self.active = True
 
     def apply_attrition(self, hazard_saudi, hazard_foreign):
         if not self.active:
             return False
-        tenure_factor = max(0.5, 1.0 - 0.5 * min(1.0, self.tenure_months / 12.0))
+        # --- FIX: safe division ---
+        tenure = self.tenure_months if self.tenure_months is not None else 0
+        tenure_factor = max(0.5, 1.0 - 0.5 * min(1.0, tenure / 12.0))
         hazard = hazard_saudi * tenure_factor if self.is_saudi else hazard_foreign * tenure_factor
         if random.random() < hazard:
             self.active = False
@@ -48,6 +52,7 @@ class NitaqatRiskSimulator:
 
     def load_company_employees(self, company_id):
         with self.engine.connect() as conn:
+            # --- FIX: COALESCE for NULL tenure_months ---
             df = pd.read_sql(
                 text("""
                     SELECT 
@@ -57,8 +62,11 @@ class NitaqatRiskSimulator:
                         salary,
                         is_saudi,
                         is_low_wage,
-                        EXTRACT(YEAR FROM AGE(CURRENT_DATE, hire_date::date)) * 12 
-                        + EXTRACT(MONTH FROM AGE(CURRENT_DATE, hire_date::date)) AS tenure_months
+                        COALESCE(
+                            EXTRACT(YEAR FROM AGE(CURRENT_DATE, hire_date::date)) * 12 
+                            + EXTRACT(MONTH FROM AGE(CURRENT_DATE, hire_date::date)),
+                            0
+                        ) AS tenure_months
                     FROM employees
                     WHERE company_id = :cid
                 """),
@@ -66,7 +74,11 @@ class NitaqatRiskSimulator:
             )
         if df.empty:
             raise ValueError(f"No active employees found for company {company_id}")
+        # Convert any remaining None to 0
+        df['tenure_months'] = df['tenure_months'].fillna(0)
         return [EmployeeAgent(row) for row in df.to_dict('records')]
+
+    # ... rest of class (get_optimization_recommendations, calculate_metrics, run_simulation) unchanged ...
 
     def get_optimization_recommendations(self, company_id):
         from optimizer import NitaqatOptimizer
