@@ -63,20 +63,32 @@ class NitaqatOptimizer:
 
     def optimize(self, company_id, target_band="Green (Low)", hiring_cost_multiplier=1.0, upskill_cost_multiplier=1.0):
         logger.info(f"🚀 Starting optimization for Company {company_id}")
-
         sector, agg_df, quotas_df = self.get_company_data(company_id)
         logger.info(f"📊 Sector: {sector}, Professions found: {len(agg_df)}")
 
         df = agg_df.merge(quotas_df, on="profession", how="left")
+
+        # --- FIX: ensure numeric columns are not None ---
+        df['total_employees'] = df['total_employees'].fillna(0).astype(int)
+        df['saudi_count'] = df['saudi_count'].fillna(0).astype(int)
+        df['low_wage_saudi_count'] = df['low_wage_saudi_count'].fillna(0).astype(int)
+
         df['target_pct'] = df['target_saudization_pct'] / 100.0
         df['target_pct'] = df['target_pct'].fillna(0.20)
         df['min_salary'] = df['min_salary_requirement'].fillna(4000)
 
+        # --- FIX: weighted saudis with safe conversion ---
         df['current_weighted_saudis'] = (
             (df['saudi_count'] - df['low_wage_saudi_count']) * 1.0 +
             df['low_wage_saudi_count'] * 0.5
         )
-        df['current_effective_pct'] = df['current_weighted_saudis'] / df['total_employees']
+
+        # --- FIX: avoid division by zero and None ---
+        df['current_effective_pct'] = df.apply(
+            lambda row: row['current_weighted_saudis'] / row['total_employees']
+            if row['total_employees'] > 0 else 0.0,
+            axis=1
+        )
 
         prob = pulp.LpProblem(f"Nitaqat_Optimization_Company_{company_id}", pulp.LpMinimize)
         professions = df['profession'].tolist()
