@@ -1,0 +1,21 @@
+company_id,name,sector,total_employees,saudi_ratio_target
+1,Krause-Lopez Healthcare,healthcare,123,0.278
+2,Haas-Thompson Hospitality,hospitality,132,0.158
+3,Barton-Anderson Construction,construction,154,0.086
+4,Williams Group Healthcare,healthcare,165,0.346
+5,"Brown, Graham and Martin Hospitality",hospitality,144,0.132
+6,"Hunter, Davis and Hernandez Engineering",engineering,112,0.162
+7,"Flynn, Blake and Kelley Hospitality",hospitality,98,0.153
+8,Russell Inc Hospitality,hospitality,141,0.137
+9,"Smith, Watkins and Buchanan Retail",retail,156,0.129
+10,Smith-Green Hospitality,hospitality,142,0.155
+11,Stanley-Bass It_Telecom,it_telecom,112,0.284
+12,Wade-Williams Construction,construction,80,0.099
+13,Lowery-Jensen Retail,retail,105,0.092
+14,"Vincent, Villa and Savage Construction",construction,77,0.098
+15,"Berg, Foster and Jackson Engineering",engineering,113,0.14
+16,"Young, Fisher and Smith Retail",retail,167,0.127
+17,Mills Inc Finance,finance,164,0.249
+18,Figueroa-Powell Construction,construction,76,0.112
+19,Dunn-Cross It_Telecom,it_telecom,125,0.193
+20,"Smith, Wilson and Potter Construction",construction,90,0.085

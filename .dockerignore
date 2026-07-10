@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+*.pkl
+*.csv
+.env
+.git
+.gitignore
+*.log
+.DS_Store
+README.md
