@@ -30,7 +30,16 @@ if not DATABASE_URL:
 # Initialize all components
 optimizer = NitaqatOptimizer(DATABASE_URL)
 risk_sim = NitaqatRiskSimulator(DATABASE_URL)
-attrition_predictor = AttritionPredictor()
+# attrition_predictor = AttritionPredictor()
+attrition_predictor = None
+
+def get_attrition_predictor():
+    global attrition_predictor
+    if attrition_predictor is None:
+        attrition_predictor = AttritionPredictor()
+        attrition_predictor.train(force_retrain=False)
+    return attrition_predictor
+
 skill_gap_analyzer = SkillGapAnalyzer()
 turnover_calculator = TurnoverCostCalculator()
 scenario_builder = ScenarioBuilder()
@@ -242,7 +251,7 @@ def run_simulation(request: SimulationRequest):
 @app.get("/attrition-risks/{company_id}")
 def get_attrition_risks(company_id: int):
     try:
-        df = attrition_predictor.predict_risk(company_id)
+        df = get_attrition_predictor().predict_risk(company_id)
         if df.empty:
             return {"message": "No employees found for this company.", "data": []}
         result = {
