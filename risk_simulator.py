@@ -86,6 +86,8 @@ class NitaqatRiskSimulator:
         saudi_count = sum(1 for a in agents if a.is_saudi and a.active)
         low_wage = sum(1 for a in agents if a.is_saudi and a.is_low_wage and a.active)
         weighted = (saudi_count - low_wage) + 0.5 * low_wage
+        # Ensure weighted is a number (not None)
+        weighted = weighted if weighted is not None else 0
         pct = (weighted / total * 100) if total > 0 else 0
         band = "Green" if pct >= 20 else ("Yellow" if pct >= 10 else "Red")
         return {
