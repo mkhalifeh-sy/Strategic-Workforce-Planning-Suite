@@ -20,11 +20,12 @@ except FileNotFoundError as e:
     print(f"Error: {e}\nPlease run data_generator.py first.")
     exit(1)
 
-# --- Fix date format ---
-# Convert hire_date to datetime (auto-detects DD-MM-YYYY, YYYY-MM-DD, etc.)
-# Then format as YYYY-MM-DD for PostgreSQL
+# --- Fix date format: specify DD-MM-YYYY explicitly ---
+# This eliminates the warning and ensures correct parsing
 employees['hire_date'] = pd.to_datetime(
-    employees['hire_date'], errors='coerce'
+    employees['hire_date'], 
+    format='%d-%m-%Y',  # Explicitly tell pandas the date format[reference:2][reference:3]
+    errors='coerce'
 ).dt.strftime('%Y-%m-%d')
 
 # Check for invalid dates
@@ -33,6 +34,7 @@ if employees['hire_date'].isna().any():
     print(f"   Rows with invalid dates: {employees[employees['hire_date'].isna()].index.tolist()}")
 
 # --- Truncate existing data (clean slate, preserves table structure) ---
+# Tables must exist before TRUNCATE can run[reference:4]
 with engine.connect() as conn:
     conn.execute(text("TRUNCATE TABLE companies, employees RESTART IDENTITY CASCADE;"))
     conn.commit()
