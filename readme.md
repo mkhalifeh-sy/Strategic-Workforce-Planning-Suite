@@ -140,10 +140,10 @@ Full interactive documentation is available at /docs when the API is running.
 MIT
 ---
 ## Author
-```Mohammad Khalifeh
-linkedin.com/in/your-handle
-github.com/mkhaifeh-sy
-```
+### Mohammad Khalifeh
+### linkedin.com/in/your-handle
+### github.com/mkhaifeh-sy
+
 ---
 ## Related Projects
 This project is part of a broader HR technology portfolio:
