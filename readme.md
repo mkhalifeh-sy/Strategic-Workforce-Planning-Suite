@@ -1,37 +1,51 @@
 # 🇸🇦 Nitaqat Strategic Workforce Planning Suite
 
-## What a Recruiter Sees
-
-> I’m a recruiter looking for a Technology Operations leader who understands KSA’s Saudization landscape, can build enterprise‑grade systems, and has a track record of delivering measurable business value. I need someone who can bridge compliance, data, and strategy – not just write code, but solve business problems. This project tells me the candidate has 20+ years of GCC HR/IT experience, formal Machine Learning training, and can architect, build, and deploy a full‑stack solution that directly addresses a mandatory KSA compliance requirement. It’s a complete product, not a toy project.
-
-## What a Hiring Manager / CEO Sees
-
-> I need a leader who can turn compliance constraints into strategic advantages. This project proves the candidate can optimize workforce composition, minimize hiring costs, and forecast compliance risks – all while building systems that integrate with existing HRIS. The Linear Programming optimizer and Monte Carlo simulator show they think in terms of ROI, risk, and scenario planning. They don’t just report the problem – they provide the solution with a clear price tag and a roadmap.
-
-## Overview
-
 A production‑ready workforce planning platform that uses Linear Programming and Monte Carlo simulation to help Saudi companies achieve Nitaqat compliance at minimum cost. Built for integration with Jisr, SAP SuccessFactors, and Oracle HCM.
+
+---
+
+## Why This Project Matters
+
+Saudization is mandatory for every company in Saudi Arabia. The rules are complex – 269 professions each have their own quota, and the government updates them frequently. Most companies treat compliance as a checkbox, reacting only when they fall into the Red band and face penalties. This project takes a different approach: it uses mathematical optimization to find the minimum‑cost path to compliance, and Monte Carlo simulation to forecast risk 36 months ahead. It turns a regulatory burden into a strategic advantage.
+
+This is not a toy project. It is a complete, cloud‑deployed system built by someone with 20+ years of GCC enterprise experience, reinforced by a Master’s degree in Machine Learning. The code is production‑ready, the API is documented, and the dashboard is live. It demonstrates the ability to bridge compliance, data, and strategy – to build systems that solve real business problems, not just write code.
+
+---
 
 ## Key Features
 
-- **Profession‑level compliance optimization** – respects 2026 Nitaqat quotas across 269 professions
-- **Weighted Saudization formula** – handles low‑wage (0.5x) and disabled (4x) weighting
-- **Monte Carlo risk simulation** – forecasts Red‑band probability up to 36 months
-- **What‑if scenario builder** – adjust hiring costs, growth rates, and policy changes
-- **Enterprise API** – RESTful endpoints with OpenAPI documentation
-- **Interactive dashboard** – Streamlit frontend with bilingual support
+- **Profession‑level compliance optimization** – respects 2026 Nitaqat quotas across 269 professions, with sector‑specific thresholds.
+- **Weighted Saudization formula** – handles low‑wage (0.5x) and disabled (4x) weighting, as defined by the Ministry of Human Resources.
+- **Monte Carlo risk simulation** – forecasts Red‑band probability up to 36 months, factoring in probabilistic attrition and hiring.
+- **What‑if scenario builder** – adjust hiring costs, growth rates, and policy changes to see the impact on compliance and cost.
+- **Enterprise API** – RESTful endpoints with OpenAPI documentation, designed for integration with Jisr, SAP SuccessFactors, and Oracle HCM.
+- **Interactive dashboard** – Streamlit frontend with company selection, real‑time metrics, and bilingual support (Arabic/English).
+- **Attrition prediction** – Logistic Regression model to identify employees at risk of leaving.
+- **Skill‑gap analysis** – identifies professions where Saudi employees lack required skills.
+- **Turnover cost calculator** – quantifies the financial impact of employee departures.
+
+---
 
 ## Tech Stack
 
-- **Backend:** FastAPI, SQLAlchemy, PostgreSQL
-- **Optimization:** PuLP (Linear Programming)
-- **Simulation:** Monte Carlo (NumPy)
-- **Frontend:** Streamlit, Plotly
-- **Deployment:** Docker, Railway, Streamlit Cloud
+| Layer | Technology |
+| :--- | :--- |
+| Backend | FastAPI, SQLAlchemy, PostgreSQL |
+| Optimization | PuLP (Linear Programming) |
+| Simulation | Monte Carlo (NumPy) |
+| Machine Learning | scikit‑learn, Logistic Regression |
+| Frontend | Streamlit, Plotly |
+| Deployment | Docker, Railway, Streamlit Cloud |
+| Authentication | JWT (mock RBAC) |
+
+---
 
 ## Live Demo
 
 - **API:** [https://strategic-workforce-planning-suite-production.up.railway.app](https://strategic-workforce-planning-suite-production.up.railway.app)
+- **API Documentation:** [https://strategic-workforce-planning-suite-production.up.railway.app/docs](https://strategic-workforce-planning-suite-production.up.railway.app/docs)
 - **Dashboard:** [https://your-username-nitaqat-suite.streamlit.app](https://your-username-nitaqat-suite.streamlit.app)
+
+---
 
 ## Repository Structure
