@@ -144,7 +144,7 @@ CC BY-NC 4.0
 ## Author
 Mohammad Khalifeh
 
-[linkedin.com/in/your-handle](https://www.linkedin.com/in/m-khalifeh/)
+[linkedin.com/in/m-khalifeh](https://www.linkedin.com/in/m-khalifeh/)
 
 [github.com/mkhaifeh-sy](https://github.com/mkhalifeh-sy)
 
