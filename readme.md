@@ -135,13 +135,17 @@ GET	/skill-gap/{id}	Analyze skill gaps
 POST	/turnover-cost	Calculate turnover cost
 POST	/scenario	Run a what‑if scenario
 Full interactive documentation is available at /docs when the API is running.
+
 ---
 ## License
 MIT
+
 ---
 ## Author
 Mohammad Khalifeh
+
 linkedin.com/in/your-handle
+
 github.com/mkhaifeh-sy
 
 ---
