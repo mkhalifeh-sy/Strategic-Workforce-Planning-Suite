@@ -152,8 +152,10 @@ Mohammad Khalifeh
 ## Related Projects
 This project is part of a broader HR technology portfolio:
 
-Retention & Talent Intelligence Platform – Predict attrition, recommend interventions, and calculate ROI.
+[Nitaqat Strategic Workforce Planning Suite ](https://github.com/mkhalifeh-sy/Strategic-Workforce-Planning-Suite) – Compliance optimization with LP and Monte Carlo simulation.
 
-HR Operational Intelligence Dashboard – Real‑time workforce metrics and alerts.
+[Retention & Talent Intelligence Platform](https://github.com/mkhalifeh-sy/Retention-Talent-Intelligence) – Predict attrition, recommend interventions, and calculate ROI.
 
-HR Intelligence & Automation Platform – Unified API, LLM chat, workflows, and RBAC.
+[HR Operational Intelligence Dashboard](https://github.com/mkhalifeh-sy/HR-Operational-Intelligence-Dashboard) – Real‑time workforce metrics and alerts.
+
+[HR Intelligence & Automation Platform](https://github.com/mkhalifeh-sy/HR-Intelligence-Automation) – Unified API, LLM chat, workflows, and RBAC.
