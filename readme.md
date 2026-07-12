@@ -42,9 +42,9 @@ This is not a toy project. It is a complete, cloud‑deployed system built by so
 
 ## Live Demo
 
-- **API:** [https://strategic-workforce-planning-suite-production.up.railway.app](https://strategic-workforce-planning-suite-production.up.railway.app)
-- **API Documentation:** [https://strategic-workforce-planning-suite-production.up.railway.app/docs](https://strategic-workforce-planning-suite-production.up.railway.app/docs)
-- **Dashboard:** [https://your-username-nitaqat-suite.streamlit.app](https://your-username-nitaqat-suite.streamlit.app)
+- **API:** [strategic-workforce-planning-suite-production-13c1.up.railway.app](strategic-workforce-planning-suite-production-13c1.up.railway.app)
+- **API Documentation:** [strategic-workforce-planning-suite-production-13c1.up.railway.app/docs](strategic-workforce-planning-suite-production-13c1.up.railway.app/docs)
+- **Dashboard:** [https://strategic-workforce-planning-suite.streamlit.app/](https://strategic-workforce-planning-suite.streamlit.app/)
 
 ---
 
@@ -92,7 +92,7 @@ Environment variables are managed securely via Railway's built‑in variable sys
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/nitaqat-suite.git
+git clone https://github.com/mkhalifeh-sy/Strategic-Workforce-Planning-Suite.git
 cd nitaqat-suite
 
 # 2. Create a virtual environment (optional)
@@ -138,15 +138,15 @@ Full interactive documentation is available at /docs when the API is running.
 
 ---
 ## License
-MIT
+CC BY-NC 4.0
 
 ---
 ## Author
 Mohammad Khalifeh
 
-linkedin.com/in/your-handle
+[linkedin.com/in/your-handle](https://www.linkedin.com/in/m-khalifeh/)
 
-github.com/mkhaifeh-sy
+[github.com/mkhaifeh-sy](https://github.com/mkhalifeh-sy)
 
 ---
 ## Related Projects
