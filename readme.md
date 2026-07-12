@@ -42,8 +42,8 @@ This is not a toy project. It is a complete, cloud‑deployed system built by so
 
 ## Live Demo
 
-- **API:** [https://strategic-workforce-planning-suite-production.up.railway.app](https://strategic-workforce-planning-suite-production.up.railway.app)
-- **API Documentation:** [https://strategic-workforce-planning-suite-production.up.railway.app/docs](https://strategic-workforce-planning-suite-production.up.railway.app/docs)
+- **API:** [strategic-workforce-planning-suite-production-13c1.up.railway.app](strategic-workforce-planning-suite-production-13c1.up.railway.app)
+- **API Documentation:** [strategic-workforce-planning-suite-production-13c1.up.railway.app/docs](strategic-workforce-planning-suite-production-13c1.up.railway.app)
 - **Dashboard:** [https://your-username-nitaqat-suite.streamlit.app](https://your-username-nitaqat-suite.streamlit.app)
 
 ---
