@@ -49,3 +49,19 @@ This is not a toy project. It is a complete, cloud‑deployed system built by so
 ---
 
 ## Repository Structure
+├── api.py                 # FastAPI backend – all endpoints
+├── optimizer.py           # Linear Programming optimizer (PuLP)
+├── risk_simulator.py      # Monte Carlo simulation engine
+├── attrition_model.py     # Attrition prediction (Logistic Regression)
+├── skill_gap.py           # Skill‑gap analysis
+├── cost_of_turnover.py    # Turnover cost calculator
+├── scenario_builder.py    # What‑if scenario runner
+├── dashboard.py           # Streamlit frontend
+├── utils.py               # Shared helpers (NumPy conversion)
+├── data_generator.py      # Synthetic data generator
+├── init_db.py             # Database initialization script
+├── load_data.py           # Data loader
+├── Dockerfile             # Container build
+├── start.sh               # Startup script for Railway
+├── requirements.txt       # Python dependencies
+└── README.md              # This file
