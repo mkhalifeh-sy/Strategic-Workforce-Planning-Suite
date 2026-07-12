@@ -121,7 +121,7 @@ uvicorn api:app --reload --host 0.0.0.0 --port 8000
 streamlit run dashboard.py
 
 Open your browser at http://localhost:8501 to view the dashboard.
-
+```
 ## API Endpoints
 
 Method	Endpoint	Description
@@ -136,15 +136,15 @@ POST	/turnover-cost	Calculate turnover cost
 POST	/scenario	Run a what‑if scenario
 Full interactive documentation is available at /docs when the API is running.
 ---
-##License
+## License
 MIT
 ---
-##Author
+## Author
 Mohammad Khalifeh
 linkedin.com/in/your-handle
 github.com/mkhaifeh-sy
 ---
-##Related Projects
+## Related Projects
 This project is part of a broader HR technology portfolio:
 
 Retention & Talent Intelligence Platform – Predict attrition, recommend interventions, and calculate ROI.
